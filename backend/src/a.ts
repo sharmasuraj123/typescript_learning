@@ -1,34 +1,25 @@
-// implementing the interface using the class.
+// types
 
-abstract class People {
+type User = {
   name: string;
-  age: number;
-  constructor(a: string, b: number) {
-    this.name = a;
-    this.age = b;
-  }
-  abstract greet(): string;
+  userid: number;
+};
 
-  hello() {
-    return "hello raja ji";
-  }
+type Admin = {
+  name: string;
+  adminid: number;
+};
+
+type AdminOrUser = Admin | User;
+
+function fun(person: AdminOrUser): string {
+  return `welcome ${person.name}`;// you can't user person.userid because it can be or can't be.
 }
 
-class Employee extends People {
-  name: string;
-  age: number;
-  constructor(a: string, b: number) {
-    super(a, b);
-    this.name = a;
-    this.age = b;
-  }
+let person: AdminOrUser = {
+  name: "surj",
+  userid: 45,
+  adminid: 56,
+};
 
-  greet(): string {
-    return "hello";
-  }
-}
-
-const manager = new Employee("suraj", 23);
-
-console.log(manager.greet());
-console.log(manager.hello());
+console.log(fun(person))

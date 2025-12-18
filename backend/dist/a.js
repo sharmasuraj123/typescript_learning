@@ -1,18 +1,13 @@
 "use strict";
-// implementing the interface using the class.
+// types
 Object.defineProperty(exports, "__esModule", { value: true });
-class Employee {
-    name;
-    age;
-    constructor(a, b) {
-        this.name = a;
-        this.age = b;
-    }
-    greet() {
-        return "hello";
-    }
+function fun(person) {
+    return `welcome ${person.name}`;
 }
-const manager = new Employee("suraj", 23);
-console.log(manager);
-console.log(manager.greet());
+let person = {
+    name: "surj",
+    userid: 45,
+    adminid: 56,
+};
+console.log(fun(person));
 //# sourceMappingURL=a.js.map
