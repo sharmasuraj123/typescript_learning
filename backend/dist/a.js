@@ -1,23 +1,18 @@
 "use strict";
+// implementing the interface using the class.
 Object.defineProperty(exports, "__esModule", { value: true });
-function isLegel(user) {
-    return user.age >= 18;
+class Employee {
+    name;
+    age;
+    constructor(a, b) {
+        this.name = a;
+        this.age = b;
+    }
+    greet() {
+        return "hello";
+    }
 }
-const user = {
-    firstName: "suraj",
-    lastName: "sharma",
-    email: "surja@gmail.com",
-    age: 3,
-    address: {
-        city: "jaipur",
-        pincode: 485748,
-    },
-};
-const uer2 = {
-    firstName: "kailash",
-    email: "sur@gmain",
-    age: 56,
-    // no need to wright the lastName.
-};
-console.log(isLegel(user));
+const manager = new Employee("suraj", 23);
+console.log(manager);
+console.log(manager.greet());
 //# sourceMappingURL=a.js.map
