@@ -1,25 +1,69 @@
-// types
+// array in TS
 
-type User = {
-  name: string;
-  userid: number;
-};
+// let arr: number[] = [23, 4, 45, 6];
 
-type Admin = {
-  name: string;
-  adminid: number;
-};
+// function masValue(a: number[]) {
+//   let max = -Infinity;
+//   for (let num of a) {
+//     if (num>max) {
+//       max = num;
+//     }
+//   }
+//   return max;
+// }
 
-type AdminOrUser = Admin | User;
+// console.log("the max value of arr is :  "+ masValue(arr) )
 
-function fun(person: AdminOrUser): string {
-  return `welcome ${person.name}`;// you can't user person.userid because it can be or can't be.
+
+
+// find the legal user from user list.
+
+function isLegal(users: User[]): string[] {
+  let legalUser: string[] = [];
+  for (const user of users) {
+    if (user.age > 18) {
+      legalUser.push(user.name);
+    }
+  }
+  return legalUser;
 }
 
-let person: AdminOrUser = {
-  name: "surj",
-  userid: 45,
-  adminid: 56,
-};
+interface Address {
+  city: string;
+  pincode: number;
+}
 
-console.log(fun(person))
+interface User {
+  name: string;
+  age: number;
+  address: Address[];
+}
+
+let users: User[] = [
+  {
+    name: "suraj",
+    age: 12,
+    address: [
+      { city: "dubai", pincode: 111111 },
+      { city: "jaipur", pincode: 999999 },
+    ],
+  },
+  {
+    name: "raju",
+    age: 21,
+    address: [
+      { city: "dubai", pincode: 111111 },
+      { city: "jaipur", pincode: 999999 },
+    ],
+  },
+  {
+    name: "raja ji",
+    age: 32,
+    address: [
+      { city: "dubai", pincode: 111111 },
+      { city: "jaipur", pincode: 999999 },
+    ],
+  },
+];
+
+console.log(isLegal(users));
