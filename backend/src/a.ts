@@ -1,69 +1,34 @@
-// array in TS
+// interfaces extends interfaces , so  all properties will go to child interfaces. if we make a obj of the
+// child interface then , we must include the parent keys , else it throw an error . it is just like & in types
 
-// let arr: number[] = [23, 4, 45, 6];
-
-// function masValue(a: number[]) {
-//   let max = -Infinity;
-//   for (let num of a) {
-//     if (num>max) {
-//       max = num;
-//     }
-//   }
-//   return max;
+// interface A {
+//   x: number;
+//   y: number;
 // }
 
-// console.log("the max value of arr is :  "+ masValue(arr) )
+// interface A {
+//   name: string;
+// }
+
+// const persion: A = {
+//   x: 4,
+//   y: 5,
+//   name: "su",
+// };
 
 
 
-// find the legal user from user list.
-
-function isLegal(users: User[]): string[] {
-  let legalUser: string[] = [];
-  for (const user of users) {
-    if (user.age > 18) {
-      legalUser.push(user.name);
-    }
-  }
-  return legalUser;
+interface A {
+  x: number;
+  y: number;
 }
 
-interface Address {
-  city: string;
-  pincode: number;
-}
-
-interface User {
+interface B extends A {
   name: string;
-  age: number;
-  address: Address[];
 }
 
-let users: User[] = [
-  {
-    name: "suraj",
-    age: 12,
-    address: [
-      { city: "dubai", pincode: 111111 },
-      { city: "jaipur", pincode: 999999 },
-    ],
-  },
-  {
-    name: "raju",
-    age: 21,
-    address: [
-      { city: "dubai", pincode: 111111 },
-      { city: "jaipur", pincode: 999999 },
-    ],
-  },
-  {
-    name: "raja ji",
-    age: 32,
-    address: [
-      { city: "dubai", pincode: 111111 },
-      { city: "jaipur", pincode: 999999 },
-    ],
-  },
-];
-
-console.log(isLegal(users));
+const newpersioin: B = {
+  x: 4,
+  y: 6,
+  name: "suraj",
+};
