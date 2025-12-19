@@ -1,27 +1,9 @@
-// enum Direction {
-//     Up,
-//     Down,
-//     Left,
-//     Right
-// }
-
-// function doSomething(keyPressed: Direction) {
-// 	// do something.
-// }
-
-// doSomething(Direction.Up)
-// console.log(Direction.Left)
-
-enum Direction {
-    Up = "UP",
-    Down = "Down",
-    Left = "Left",
-    Right = 'Right'
+function getFirstElement<T>(arr: T[]) :T|undefined{
+  return arr[0];
 }
 
-function doSomething(keyPressed: Direction) {
-	// do something.
-}
+const el = getFirstElement(["harkiratSingh", "ramanSingh"]);
+if (el !== undefined) console.log(el.toLowerCase());
 
-doSomething(Direction.Down)
-console.log(Direction.Down);
+
+
