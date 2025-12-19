@@ -1,34 +1,27 @@
-// interfaces extends interfaces , so  all properties will go to child interfaces. if we make a obj of the
-// child interface then , we must include the parent keys , else it throw an error . it is just like & in types
-
-// interface A {
-//   x: number;
-//   y: number;
+// enum Direction {
+//     Up,
+//     Down,
+//     Left,
+//     Right
 // }
 
-// interface A {
-//   name: string;
+// function doSomething(keyPressed: Direction) {
+// 	// do something.
 // }
 
-// const persion: A = {
-//   x: 4,
-//   y: 5,
-//   name: "su",
-// };
+// doSomething(Direction.Up)
+// console.log(Direction.Left)
 
-
-
-interface A {
-  x: number;
-  y: number;
+enum Direction {
+    Up = "UP",
+    Down = "Down",
+    Left = "Left",
+    Right = 'Right'
 }
 
-interface B extends A {
-  name: string;
+function doSomething(keyPressed: Direction) {
+	// do something.
 }
 
-const newpersioin: B = {
-  x: 4,
-  y: 6,
-  name: "suraj",
-};
+doSomething(Direction.Down)
+console.log(Direction.Down);

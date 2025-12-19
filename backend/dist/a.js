@@ -1,52 +1,26 @@
 "use strict";
-// array in TS
-Object.defineProperty(exports, "__esModule", { value: true });
-// let arr: number[] = [23, 4, 45, 6];
-// function masValue(a: number[]) {
-//   let max = -Infinity;
-//   for (let num of a) {
-//     if (num>max) {
-//       max = num;
-//     }
-//   }
-//   return max;
+// enum Direction {
+//     Up,
+//     Down,
+//     Left,
+//     Right
 // }
-// console.log("the max value of arr is :  "+ masValue(arr) )
-// find the legal user from user list.
-function isLegal(users) {
-    let legalUser = [];
-    for (const user of users) {
-        if (user.age > 18) {
-            legalUser.push(user.name);
-        }
-    }
-    return legalUser;
+Object.defineProperty(exports, "__esModule", { value: true });
+// function doSomething(keyPressed: Direction) {
+// 	// do something.
+// }
+// doSomething(Direction.Up)
+// console.log(Direction.Left)
+var Direction;
+(function (Direction) {
+    Direction["Up"] = "UP";
+    Direction["Down"] = "Down";
+    Direction["Left"] = "Left";
+    Direction["Right"] = "Right";
+})(Direction || (Direction = {}));
+function doSomething(keyPressed) {
+    // do something.
 }
-let users = [
-    {
-        name: "suraj",
-        age: 12,
-        address: [
-            { city: "dubai", pincode: 111111 },
-            { city: "jaipur", pincode: 999999 },
-        ],
-    },
-    {
-        name: "raju",
-        age: 21,
-        address: [
-            { city: "dubai", pincode: 111111 },
-            { city: "jaipur", pincode: 999999 },
-        ],
-    },
-    {
-        name: "raja ji",
-        age: 32,
-        address: [
-            { city: "dubai", pincode: 111111 },
-            { city: "jaipur", pincode: 999999 },
-        ],
-    },
-];
-console.log(isLegal(users));
+doSomething(Direction.Down);
+console.log(Direction.Down);
 //# sourceMappingURL=a.js.map
