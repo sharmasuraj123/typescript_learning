@@ -1,26 +1,16 @@
 "use strict";
-// enum Direction {
-//     Up,
-//     Down,
-//     Left,
-//     Right
-// }
+// learning the Pick
+// making the another type taking the keys of the existing interfaces
 Object.defineProperty(exports, "__esModule", { value: true });
-// function doSomething(keyPressed: Direction) {
-// 	// do something.
-// }
-// doSomething(Direction.Up)
-// console.log(Direction.Left)
-var Direction;
-(function (Direction) {
-    Direction["Up"] = "UP";
-    Direction["Down"] = "Down";
-    Direction["Left"] = "Left";
-    Direction["Right"] = "Right";
-})(Direction || (Direction = {}));
-function doSomething(keyPressed) {
-    // do something.
+function display(arg) {
+    if (arg.userId !== undefined)
+        return `${arg.name} and ${arg.userId} `;
+    else
+        return `${arg.name}  `;
 }
-doSomething(Direction.Down);
-console.log(Direction.Down);
+const user = {
+    name: "suraj",
+    // no need to write even a single key because all user is partial . so if user:pickUser = {} , it is fine.
+};
+console.log(display(user));
 //# sourceMappingURL=a.js.map
