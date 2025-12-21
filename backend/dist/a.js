@@ -1,16 +1,9 @@
 "use strict";
-// learning the Pick
-// making the another type taking the keys of the existing interfaces
+// Map and Record
 Object.defineProperty(exports, "__esModule", { value: true });
-function display(arg) {
-    if (arg.userId !== undefined)
-        return `${arg.name} and ${arg.userId} `;
-    else
-        return `${arg.name}  `;
-}
-const user = {
-    name: "suraj",
-    // no need to write even a single key because all user is partial . so if user:pickUser = {} , it is fine.
-};
-console.log(display(user));
+const userMap = new Map();
+userMap.set("per1", { name: "suraj", id: 49 });
+userMap.set("per2", { name: "sharma", id: 19 });
+// userMap.set("per3", { name: "rohit" });  // this will show the error.
+console.log(userMap.get("per1"));
 //# sourceMappingURL=a.js.map

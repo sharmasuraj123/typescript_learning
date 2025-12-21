@@ -1,65 +1,47 @@
-// learning the Pick
-// making the another type taking the keys of the existing interfaces
+// Map and Record
+
+// 1 Record
+/*
+  it is used to make key value pair in better way.
+ */
 
 // interface User {
 //   name: string;
-//   userId: number;
-//   pincode: number;
+//   id: number;
 // }
 
-// type PickedUser = Pick<User, "name" | "userId">;
+// type user = Record<string, User>;
 
-// function display(arg: PickedUser): string {
-//   return `${arg.name} and ${arg.userId} `;
-// }
-
-
-
-// Partial learning 
-
-// interface User {
-//   name: string;
-//   userId: number;
-//   pincode: number;
-// }
-
-// type pickUser = Partial<User>;
-
-// function display(arg: pickUser) {
-//   if (arg.userId !== undefined) return `${arg.name} and ${arg.userId} `;
-//   else return `${arg.name}  `;
-// }
-
-// const user: pickUser = {
-//   name: "suraj",
-//   // no need to write even a single key because all user is partial . so if user:pickUser = {} , it is fine.
+// const person: user = {
+//   "per1": { name: "suraj", id: 45 },
+//   "per2": { name: "suraj", id: 45 },
 // };
-// console.log(display(user));
 
+// 2 Map
 
+/*
+  it is used to make key value pair in better way.
+ */
 
+// const userMap = new Map();
 
-// explation of Readonly
+// userMap.set("per1", { name: "suraj", id: 49 });
+// userMap.set("per2", { name: "sharma", id: 19 });
+// userMap.set("per3", { name: "rohit" });
+
+// console.log(userMap.get("per1"));
+
+// when we fix the structure in Map
 
 interface User {
   name: string;
-  userId: number;
-  pincode: number;
+  id: number;
 }
 
-type pickUser = Readonly<User>;
+const userMap = new Map<string, User>();
 
-function display(arg: pickUser) {
-  if (arg.userId !== undefined) return `${arg.name} and ${arg.userId} `;
-  else return `${arg.name}  `;
-}
+userMap.set("per1", { name: "suraj", id: 49 });
+userMap.set("per2", { name: "sharma", id: 19 });
+// userMap.set("per3", { name: "rohit" });  // this will show the error.
 
-let user: pickUser = {
-  name: "suraj",       
-  userId:123,
-  pincode:1111
-};
-
-// let user.name = "mohan";   // we can't change the any key of the user because it is Readonly type.
-console.log(display(user));
-
+console.log(userMap.get("per1"));
